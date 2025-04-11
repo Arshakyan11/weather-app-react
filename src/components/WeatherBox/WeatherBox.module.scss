@@ -1,0 +1,50 @@
+section {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    .weatherSection {
+      .mainWeather {
+        border: 3px solid black;
+        padding: 20px;
+        max-width: 950px;
+        margin: auto;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        background-color: rgb(212, 212, 212);
+        .title {
+          img {
+            width: 150px;
+            filter: drop-shadow(10px 10px 5px rgb(41, 41, 161));
+          }
+          h1 {
+            font-size: 40px;
+            color: red;
+          }
+        }
+        ul {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          max-width: 800px;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 20px;
+          li {
+            display: flex;
+            gap: 20px;
+            h2 {
+              color: green;
+              font-size: 22px;
+              span {
+                color: rgb(52, 136, 164);
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
