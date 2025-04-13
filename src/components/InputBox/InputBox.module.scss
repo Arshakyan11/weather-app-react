@@ -43,6 +43,15 @@
           }
         }
       }
+      @media screen and (max-width: 365px) {
+        form {
+          input{
+            &::placeholder{
+              font-size: 18px;
+            }
+          }
+        }
+      }
     }
   }
 }
