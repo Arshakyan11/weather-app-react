@@ -1,26 +1,47 @@
 .inputBox {
+  background-color: #4d8fd0;
+  padding: 20px;
   .container {
     max-width: 1440px;
     margin: auto;
-    form {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      input {
-        padding: 20px;
-        max-width: 600px;
-        width: 100%;
-        border-radius: 20px 0 0 20px;
-        outline: none;
-        font-size: 20px;
+    .navSection {
+      form {
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid black;
+        max-width: 800px;
+        border-radius: 20px;
+        margin: auto;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        input {
+          padding: 10px 20px;
+          outline: none;
+          width: 100%;
+          font-size: 20px;
+          border: none;
+        }
+        button {
+          background: white;
+          border: none;
+          padding-right: 20px;
+          cursor: pointer;
+          img {
+            width: 50px;
+          }
+        }
       }
-      button {
-        max-width: 200px;
-        width: 100%;
-        background-color: lightblue;
-        padding: 20px 10px;
-        border-radius: 0 20px 20px 0;
-        font-size: 20px;
+      @media screen and (max-width: 770px) {
+        form {
+          input {
+            padding: 10px 20px;
+          }
+          button {
+            img {
+              width: 30px;
+            }
+          }
+        }
       }
     }
   }

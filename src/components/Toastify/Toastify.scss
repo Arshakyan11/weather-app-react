@@ -1,0 +1,19 @@
+.notification {
+  z-index: 10000;
+  top: 100px;
+
+  @media screen and (max-width: 1024px) {
+    .Toastify__toast {
+      width: 200px;
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 465px) {
+    gap: 10px;
+    .Toastify__toast {
+      right: 20px;
+      width: 150px;
+      font-size: 14px;
+    }
+  }
+}

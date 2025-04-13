@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./InputBox.module.scss";
 import { useDispatch } from "react-redux";
 import { requestData, requestWeeklyData } from "../../store/api/api";
+import search from "../../assets/img/search.png";
 const InputBox = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -9,22 +10,28 @@ const InputBox = () => {
     dispatch(requestWeeklyData("Abovyan"));
   });
   return (
-    <section className={styles.inputBox}>
+    <nav className={styles.inputBox}>
       <div className={styles.container}>
-        <form
-          onSubmit={(e) => {
-            const value = e.target[0].value;
-            e.preventDefault();
-            dispatch(requestData(value));
-            dispatch(requestWeeklyData(value));
-            e.target.reset();
-          }}
-        >
-          <input type="text" placeholder="Search City/Country" />
-          <button type="submit">Search</button>
-        </form>
+        <div className={styles.navSection}>
+          <form
+            onSubmit={(e) => {
+              const value = e.target[0].value;
+              e.preventDefault();
+              if (value) {
+                dispatch(requestData(value));
+                dispatch(requestWeeklyData(value));
+                e.target.reset();
+              }
+            }}
+          >
+            <input type="text" placeholder="Search City/Country" />
+            <button type="submit">
+              <img src={search} alt="searchBtn" />
+            </button>
+          </form>
+        </div>
       </div>
-    </section>
+    </nav>
   );
 };
 

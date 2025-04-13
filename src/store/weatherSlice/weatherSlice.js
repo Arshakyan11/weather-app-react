@@ -41,9 +41,10 @@ const weatherSlice = createSlice({
         if (!eachDay[forecastedDay]) {
           eachDay[forecastedDay] = true;
           newArray.push(elm);
-          state.weeklyWeather = newArray;
         }
       });
+      newArray.shift();
+      state.weeklyWeather = newArray;
     });
     builder.addCase(requestWeeklyData.rejected, (state, action) => {
       state.isLoadingOthers = false;
@@ -52,18 +53,12 @@ const weatherSlice = createSlice({
   },
   selectors: {
     getQueryName: (state) => state.queryName,
-    getCurrentWeather: (state) => state.currentWeather,
-    getWeeklyWeather: (state) => state.weeklyWeather,
-    getDailyWeather: (state) => state.dailyWeather,
     getGlobalWeather: (state) => state,
   },
 });
 
 export const {
   getQueryName,
-  getCurrentWeather,
-  getWeeklyWeather,
-  getDailyWeather,
   getGlobalWeather,
 } = weatherSlice.selectors;
 export default weatherSlice.reducer;
